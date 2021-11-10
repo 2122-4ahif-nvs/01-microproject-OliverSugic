@@ -1,0 +1,30 @@
+= Microprojekt Schwimmverein
+Oliver Sugic
+1.0.0, 2021-11-09: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Klassen Diagramm 1
+plantuml::plantuml/Schwimmverein.puml[]
+
+== Anwendung
+
+Es geht dabei um die Verwaltung eines Schwimmvereins.
+Es werden Schwimmer, Trainer und die Kader verwaltet, um jederzeit die Leistungen der Schwimmer zu kontrollieren.
+Da sich ein Verein auch von Wettkämpfen finanziert, ist es wichtig,
+die jeweilge Leistung( Anwesenheit, geschwomme Kilometer) im Blick zu haben,
+um die jeweiligen Kinder auf Wettkämpfe schicken zu können,
+da bei nicht erreichen eines Limits eine Strafzahlung erfolgt.
+
+
+
