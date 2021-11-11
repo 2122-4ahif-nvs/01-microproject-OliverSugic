@@ -27,4 +27,5 @@ class sqaud{
 left to right direction
 swimmer "*"--"1" sqaud
 trainer "1"--"*" sqaud
+
 @enduml
