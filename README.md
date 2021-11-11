@@ -1,2 +1,1 @@
-[gh-pages] [https://github.com/2122-4ahif-nvs/01-microproject-OliverSugic.git/
-]
+[gh-pages] [https://2122-4ahif-nvs.github.io/01-microproject-OliverSugic/]
