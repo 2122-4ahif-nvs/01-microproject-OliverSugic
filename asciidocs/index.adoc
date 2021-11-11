@@ -18,7 +18,7 @@ ifdef::backend-html5[]
 
 plantuml::plantuml/Schwimmverein.puml[]
 
-== Anwendungs
+== Anwendung
 
 Es geht dabei um die Verwaltung eines Schwimmvereins.
 Es werden Schwimmer, Trainer und die Kader verwaltet, um jederzeit die Leistungen der Schwimmer zu kontrollieren.
