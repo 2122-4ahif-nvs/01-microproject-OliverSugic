@@ -4,5 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/asciidocss/gh-pages" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gh-pages" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gh-pages/gh-pages" vcs="Git" />
   </component>
 </project>

@@ -15,9 +15,10 @@ ifdef::backend-html5[]
 //toc::[]
 
 == Klassen Diagramm 1
+
 plantuml::plantuml/Schwimmverein.puml[]
 
-== Anwendung
+== Anwendungs
 
 Es geht dabei um die Verwaltung eines Schwimmvereins.
 Es werden Schwimmer, Trainer und die Kader verwaltet, um jederzeit die Leistungen der Schwimmer zu kontrollieren.
