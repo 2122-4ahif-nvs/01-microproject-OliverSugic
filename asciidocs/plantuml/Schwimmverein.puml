@@ -2,30 +2,31 @@
 
 
 
-class swimmer{
+class Swimmer{
     - firstname: String
     - lastname: String
     - dateOfBirth: Localdate
     - bestStroke: String
     - kilometerSwam: int
     - attendanceInHours: int
-    - sqaud: sqaud
+    - Squad: squad
 }
 
-class trainer{
+class Trainer{
     - firstname: String
     - lastname: String
     - dateOfBirth: Localdate
-    - sqaud: List<sqaud>
+    - Squad: List<Squad>
 }
 
-class sqaud{
+class Squad{
     - name: String
     - ageForSquad: Localdate
-    - swimmer: List<swimmer>
+    - Swimmer: List<Swimmer>
+    - Trainer: trainer
 }
 left to right direction
-swimmer "*"--"1" sqaud
-trainer "1"--"*" sqaud
+Swimmer "*"--"1" Squad
+Trainer "1"--"*" Squad
 
 @enduml
