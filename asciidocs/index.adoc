@@ -14,7 +14,7 @@ ifdef::backend-html5[]
 // print the toc here (not at the default position)
 //toc::[]
 
-== Klassen Diagramm 1
+== Klassen Diagramm
 
 plantuml::plantuml/Schwimmverein.puml[]
 
