@@ -27,5 +27,10 @@ die jeweilge Leistung( Anwesenheit, geschwomme Kilometer) im Blick zu haben,
 um die jeweiligen Kinder auf Wettkämpfe schicken zu können,
 da bei nicht erreichen eines Limits eine Strafzahlung erfolgt.
 
+== GRPC
+
+Link zum link:grpc.adoc[ GRPC] for more information.
+
+
 
 
