@@ -1,1 +1,0 @@
-INSERT INTO Swimmer VALUES('Oliver','Sugic',)
