@@ -6,7 +6,8 @@ import java.time.LocalDate;
 @Entity
 public class Swimmer {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String firstname;
@@ -16,8 +17,8 @@ public class Swimmer {
     int kilometerSwam;
     int attendanceInHours;
 
-//    @ManyToOne
-//    Squad squad;
+    @ManyToOne
+    Squad squad;
 
     public Swimmer() {
     }
@@ -80,11 +81,11 @@ public class Swimmer {
         this.attendanceInHours = attendanceInHours;
     }
 
-//    public Squad getSquad() {
-//        return squad;
-//    }
-//
-//    public void setSquad(Squad squad) {
-//        this.squad = squad;
-//    }
+    public Squad getSquad() {
+        return squad;
+    }
+
+    public void setSquad(Squad squad) {
+        this.squad = squad;
+    }
 }

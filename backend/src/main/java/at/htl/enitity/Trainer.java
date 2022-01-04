@@ -7,15 +7,16 @@ import java.util.List;
 @Entity
 public class Trainer {
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String firstname;
     String lastname;
     LocalDate dob;
 
-    //@OneToMany
-    //List<Squad> squads;
+    @OneToMany
+    List<Squad> squads;
 
     public Trainer() {
     }
@@ -24,7 +25,7 @@ public class Trainer {
         this.firstname = firstname;
         this.lastname = lastname;
         this.dob = dob;
-        //this.squads = squads;
+        this.squads = squads;
     }
 
     public String getFirstname() {
@@ -51,11 +52,11 @@ public class Trainer {
         this.dob = dob;
     }
 
-//    public List<Squad> getSquads() {
-//        return squads;
-//    }
-//
-//    public void setSquads(List<Squad> squads) {
-//        this.squads = squads;
-//    }
+    public List<Squad> getSquads() {
+        return squads;
+    }
+
+    public void setSquads(List<Squad> squads) {
+        this.squads = squads;
+    }
 }

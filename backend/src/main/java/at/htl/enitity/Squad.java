@@ -7,17 +7,18 @@ import java.util.List;
 @Entity
 public class Squad {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     String name;
     LocalDate ageForSquad;
 
-    //@ManyToOne
-    //Trainer trainer;
+    @ManyToOne
+    Trainer trainer;
 
-    // @OneToMany
-    //List<Swimmer> swimmers;
+    @OneToMany
+    List<Swimmer> swimmers;
 
     public Squad() {
     }
@@ -26,6 +27,13 @@ public class Squad {
         this.name = name;
         this.ageForSquad = ageForSquad;
     }
+    public Squad(String name, LocalDate ageForSquad,Trainer trainer, List<Swimmer> swimmers)
+    {
+        this(name,ageForSquad);
+        this.trainer = trainer;
+        this.swimmers = swimmers;
+    }
+
     // for the future
     //    this.trainer = trainer;
     //    this.swimmers = swimmers;
@@ -46,19 +54,19 @@ public class Squad {
         this.ageForSquad = ageForSquad;
     }
 
-//    public Trainer getTrainer() {
-//        return trainer;
-//    }
-//
-//    public void setTrainer(Trainer trainer) {
-//        this.trainer = trainer;
-//    }
-//
-//    public List<Swimmer> getSwimmers() {
-//        return swimmers;
-//    }
-//
-//    public void setSwimmers(List<Swimmer> swimmers) {
-//        this.swimmers = swimmers;
-//    }
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
+    }
+
+    public List<Swimmer> getSwimmers() {
+        return swimmers;
+    }
+
+    public void setSwimmers(List<Swimmer> swimmers) {
+        this.swimmers = swimmers;
+    }
 }
