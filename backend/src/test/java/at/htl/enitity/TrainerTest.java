@@ -14,24 +14,23 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
 class TrainerTest {
-
-
-    @Inject
-    TrainerRepository repository;
-
     @Test
-    @Transactional
     void insertTest() {
         Trainer trainer =
                 new Trainer(
                         "Testname",
                         "testname",
-                        LocalDate.parse("01.01.2009", DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                        LocalDate.parse("01.01.1980", DateTimeFormatter.ofPattern("dd.MM.yyyy"))
                 );
-        repository.insert(trainer);
+        assertThat(trainer.getFirstname()).isEqualTo("Testname");
+        assertThat(trainer.getLastname()).isEqualTo("testname");
+        assertThat(trainer.getDob()).
+                isEqualTo(LocalDate.parse("01.01.1980", DateTimeFormatter.ofPattern("dd.MM.yyyy")));
     }
 }
