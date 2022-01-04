@@ -5,6 +5,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "Squad.findAll",
+                query = "select s from Squad s"
+        ),
+        @NamedQuery(
+                name = "Squad.findByName",
+                query = "select s from Squad s where s.name LIKE :NAME"
+        )
+})
 public class Squad {
 
     @Id
@@ -27,9 +37,9 @@ public class Squad {
         this.name = name;
         this.ageForSquad = ageForSquad;
     }
-    public Squad(String name, Integer ageForSquad,Trainer trainer, List<Swimmer> swimmers)
-    {
-        this(name,ageForSquad);
+
+    public Squad(String name, Integer ageForSquad, Trainer trainer, List<Swimmer> swimmers) {
+        this(name, ageForSquad);
         this.trainer = trainer;
         this.swimmers = swimmers;
     }
