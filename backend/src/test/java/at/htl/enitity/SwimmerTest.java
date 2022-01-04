@@ -17,9 +17,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @QuarkusTest
 class SwimmerTest {
 
-    @Inject
-    SwimmerRepository repository;
-
     @Test
     void createSwimmer() {
         Swimmer swimmer =
@@ -33,7 +30,8 @@ class SwimmerTest {
                 );
         assertThat(swimmer.getFirstname()).isEqualTo("Oliver");
         assertThat(swimmer.getLastname()).isEqualTo("Sugic");
-        assertThat(swimmer.getDob()).isEqualTo(LocalDate.parse("05.08.2004", DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+        assertThat(swimmer.getDob()).
+                isEqualTo(LocalDate.parse("05.08.2004", DateTimeFormatter.ofPattern("dd.MM.yyyy")));
         assertThat(swimmer.getBestStroke()).isEqualTo("breast stroke");
     }
 }
