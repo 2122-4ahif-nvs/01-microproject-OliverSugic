@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
@@ -20,7 +21,7 @@ class SwimmerTest {
     SwimmerRepository repository;
 
     @Test
-    void insertTest() {
+    void createSwimmer() {
         Swimmer swimmer =
                 new Swimmer(
                         "Oliver",
@@ -30,7 +31,9 @@ class SwimmerTest {
                         0,
                         0
                 );
-        repository.insert(swimmer);
-
+        assertThat(swimmer.getFirstname()).isEqualTo("Oliver");
+        assertThat(swimmer.getLastname()).isEqualTo("Sugic");
+        assertThat(swimmer.getDob()).isEqualTo(LocalDate.parse("05.08.2004", DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+        assertThat(swimmer.getBestStroke()).isEqualTo("breast stroke");
     }
 }

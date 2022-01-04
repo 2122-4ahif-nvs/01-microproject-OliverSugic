@@ -12,6 +12,7 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
@@ -29,8 +30,7 @@ class SquadTest {
                         "A-Kader",
                         LocalDate.parse("01.01.2009", DateTimeFormatter.ofPattern("dd.MM.yyyy"))
                 );
-
-        repository.insert(squad);
+        assertThat()
     }
 
 }
