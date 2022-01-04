@@ -7,7 +7,11 @@ import java.time.LocalDate;
 @NamedQueries({
         @NamedQuery(
                 name = "Swimmer.findAllSwimmer",
-                query = "select t.squads from Trainer t"
+                query = "select s from Swimmer s"
+        ),
+        @NamedQuery(
+                name = "Swimmer.findByLastname",
+                query = "select s from Swimmer s where s.lastname LIKE :LASTNAME"
         )
 })
 public class Swimmer {
