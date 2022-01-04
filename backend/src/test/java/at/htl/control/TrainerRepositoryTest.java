@@ -1,5 +1,6 @@
 package at.htl.control;
 
+import at.htl.enitity.Squad;
 import at.htl.enitity.Trainer;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
@@ -19,8 +20,9 @@ class TrainerRepositoryTest {
     TrainerRepository trainerRepository;
 
     @Test
-    void findAllSquads() {
-
+    void findAllSquadsOfActivTrainer() {
+        List<Squad> squads = trainerRepository.findAllSquads();
+        assertThat(squads.size()).isEqualTo(3);
     }
 
     @Test
