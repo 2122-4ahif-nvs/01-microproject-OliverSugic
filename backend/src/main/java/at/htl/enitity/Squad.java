@@ -12,7 +12,7 @@ public class Squad {
     Long id;
 
     String name;
-    LocalDate ageForSquad;
+    Integer ageForSquad;
 
     @ManyToOne
     Trainer trainer;
@@ -23,11 +23,11 @@ public class Squad {
     public Squad() {
     }
 
-    public Squad(String name, LocalDate ageForSquad) {
+    public Squad(String name, Integer ageForSquad) {
         this.name = name;
         this.ageForSquad = ageForSquad;
     }
-    public Squad(String name, LocalDate ageForSquad,Trainer trainer, List<Swimmer> swimmers)
+    public Squad(String name, Integer ageForSquad,Trainer trainer, List<Swimmer> swimmers)
     {
         this(name,ageForSquad);
         this.trainer = trainer;
@@ -42,11 +42,11 @@ public class Squad {
         this.name = name;
     }
 
-    public LocalDate getAgeForSquad() {
+    public Integer getAgeForSquad() {
         return ageForSquad;
     }
 
-    public void setAgeForSquad(LocalDate ageForSquad) {
+    public void setAgeForSquad(Integer ageForSquad) {
         this.ageForSquad = ageForSquad;
     }
 

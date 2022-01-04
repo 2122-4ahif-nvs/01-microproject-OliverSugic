@@ -17,20 +17,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
 class SquadTest {
-
-    @Inject
-    SquadRepository repository;
-
-
     @Test
-    @Transactional
     void insertTest() {
         Squad squad =
                 new Squad(
                         "A-Kader",
-                        LocalDate.parse("01.01.2009", DateTimeFormatter.ofPattern("dd.MM.yyyy"))
+                        2006
                 );
-        assertThat()
+        assertThat(squad.getName()).isEqualTo("A-Kader");
+        assertThat(squad.getAgeForSquad())
+                .isEqualTo(2006);
     }
 
 }
