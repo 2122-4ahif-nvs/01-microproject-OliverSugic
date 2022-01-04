@@ -34,10 +34,6 @@ public class Squad {
         this.swimmers = swimmers;
     }
 
-    // for the future
-    //    this.trainer = trainer;
-    //    this.swimmers = swimmers;
-
     public String getName() {
         return name;
     }
