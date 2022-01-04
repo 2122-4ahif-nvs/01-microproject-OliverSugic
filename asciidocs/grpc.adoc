@@ -19,6 +19,7 @@ ifdef::backend-html5[]
 * steht für Remote-Procedure-Call-System
 * von Google entwickelt
 * ist ein Protokoll zum Aufruf von Funktionen in verteilten Computersystemen
+* es ist eine bessere Alternative zu REST serice
 
 === Verwendungszweck
 
@@ -27,8 +28,34 @@ ifdef::backend-html5[]
 == Dokumention
 
 * Wir erstellen ein proto file im src/main/proto Verzeichnis
+[sourc,proto]
+----
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.quarkus.example";
+option java_outer_classname = "HelloWorldProto";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+----
 ** es werden im target/generated-sources viele files ertsellt durch quarkus
-* Wir erstellen nun eine Helloresource classe für das Implemtieren
+* Wir erstellen nun eine Helloresource Klasse für das Implemtieren
 [source,java]
 ----
 package at.htl.gRpc;
@@ -51,3 +78,47 @@ public class HelloService implements Greeter {
     }
 }
 ----
+* Wir erstellen auch eine Klasse fürs benutzen des Service
+
+[source,java]
+----
+package at.htl.gRpc;
+
+import io.quarkus.example.Greeter;
+import io.quarkus.example.HelloRequest;
+import io.quarkus.grpc.GrpcClient;
+import io.smallrye.mutiny.Uni;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("/hello")
+public class ExampleResource {
+
+    @GrpcClient
+    Greeter hello;
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String hello() {
+        return "hello";
+    }
+
+    @GET
+    @Path("/{name}")
+    public Uni<String> hello(@PathParam("name") String name) {
+        return hello.sayHello(HelloRequest.newBuilder().setName(name).build())
+                .onItem().transform(helloReply -> helloReply.getMessage());
+    }
+}
+----
+* Man sollte auch den hello service setzen  in dem man folgendes macht
+[source,properties]
+----
+quarkus.grpc.clients.hello.host=localhost
+----
+
+
