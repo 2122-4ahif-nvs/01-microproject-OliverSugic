@@ -1,0 +1,53 @@
+= GRPC
+Oliver Sugic
+1.0.0, 2021-11-09: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+//Need this blank line after ifdef, don't know why...
+ifdef::backend-html5[]
+
+// print the toc here (not at the default position)
+//toc::[]
+
+== Was is gRPC
+
+* steht für Remote-Procedure-Call-System
+* von Google entwickelt
+* ist ein Protokoll zum Aufruf von Funktionen in verteilten Computersystemen
+
+=== Verwendungszweck
+
+* Um weit entfernte Rechenzentren zu verbinden, braucht man gRPC. Somit kann man Dienste oder Microservices benutzen
+
+== Dokumention
+
+* Wir erstellen ein proto file im src/main/proto Verzeichnis
+** es werden im target/generated-sources viele files ertsellt durch quarkus
+* Wir erstellen nun eine Helloresource classe für das Implemtieren
+[source,java]
+----
+package at.htl.gRpc;
+
+import io.grpc.stub.StreamObserver;
+import io.quarkus.example.Greeter;
+import io.quarkus.example.HelloReply;
+import io.quarkus.example.HelloRequest;
+import io.quarkus.grpc.GrpcService;
+import io.smallrye.mutiny.Uni;
+
+@GrpcService
+public class HelloService implements Greeter {
+
+    @Override
+    public Uni<HelloReply> sayHello(HelloRequest request) {
+        return Uni.createFrom().item(() ->
+                HelloReply.newBuilder().setMessage("Hello " + request.getName()).build()
+        );
+    }
+}
+----
