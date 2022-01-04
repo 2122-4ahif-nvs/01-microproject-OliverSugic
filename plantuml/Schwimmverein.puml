@@ -1,0 +1,32 @@
+@startuml
+
+
+
+class Swimmer{
+    - firstname: String
+    - lastname: String
+    - dateOfBirth: Localdate
+    - bestStroke: String
+    - kilometerSwam: int
+    - attendanceInHours: int
+    - Squad: squad
+}
+
+class Trainer{
+    - firstname: String
+    - lastname: String
+    - dateOfBirth: Localdate
+    - Squad: List<Squad>
+}
+
+class Squad{
+    - name: String
+    - ageForSquad: Localdate
+    - Swimmer: List<Swimmer>
+    - Trainer: trainer
+}
+left to right direction
+Swimmer "*"--"1" Squad
+Trainer "1"--"*" Squad
+
+@enduml
