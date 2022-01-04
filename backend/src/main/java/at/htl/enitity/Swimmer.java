@@ -4,6 +4,12 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "Swimmer.findAllSwimmer",
+                query = "select t.squads from Trainer t"
+        )
+})
 public class Swimmer {
 
     @Id

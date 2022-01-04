@@ -5,6 +5,16 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@NamedQueries({
+          @NamedQuery(
+                name = "Trainer.findByLastname",
+                query = "select t from Trainer t where t.lastname LIKE :LASTNAME"
+        ),
+        @NamedQuery(
+                name = "Trainer.findAll",
+                query = "select t from Trainer t"
+        )
+})
 public class Trainer {
 
     @Id
