@@ -16,16 +16,6 @@ public class initbean {
     SwimmerRepository srepo;
 
     void init(@Observes StartupEvent event) {
-        Swimmer p =
-                new Swimmer(
-                        "Susi",
-                        "hansi",
-                        LocalDate.parse("01.01.2007", DateTimeFormatter.ofPattern("dd.MM.yyyy")),
-                        "Kraul",
-                        360,
-                        100
-                        );
-        srepo.insert(p);
     }
 
 }
