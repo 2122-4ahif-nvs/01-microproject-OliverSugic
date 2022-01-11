@@ -24,8 +24,8 @@ class SwimmerRepositoryTest {
     }
 
     @Test
-    void findByeLastname() {
-        Swimmer swimmer = swimmerRepository.findByeLastname("Sugic");
+    void findByLastname() {
+        Swimmer swimmer = swimmerRepository.findByLastname("Sugic");
         assertThat(swimmer).isNotNull();
     }
 }

@@ -24,7 +24,7 @@ public class Swimmer {
     String lastname;
     LocalDate dob;
     String bestStroke;
-    int kilometerSwam;
+    int swamKilometer;
     int attendanceInHours;
 
     @ManyToOne
@@ -33,15 +33,18 @@ public class Swimmer {
     public Swimmer() {
     }
 
-    public Swimmer(String firstname, String lastname, LocalDate dob, String bestStroke, int kilometerSwam, int attendanceInHours) {
+    public Swimmer(String firstname, String lastname, LocalDate dob, String bestStroke, int swamKilometer, int attendanceInHours) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.dob = dob;
         this.bestStroke = bestStroke;
-        this.kilometerSwam = kilometerSwam;
+        this.swamKilometer = swamKilometer;
         this.attendanceInHours = attendanceInHours;
     }
 
+    public Long getId() {
+        return id;
+    }
 
     public String getFirstname() {
         return firstname;
@@ -75,12 +78,12 @@ public class Swimmer {
         this.bestStroke = bestStroke;
     }
 
-    public int getKilometerSwam() {
-        return kilometerSwam;
+    public int getSwamKilometer() {
+        return swamKilometer;
     }
 
-    public void setKilometerSwam(int kilometerSwam) {
-        this.kilometerSwam = kilometerSwam;
+    public void setSwamKilometer(int kilometerSwam) {
+        this.swamKilometer = kilometerSwam;
     }
 
     public int getAttendanceInHours() {
