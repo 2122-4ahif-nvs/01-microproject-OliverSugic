@@ -25,14 +25,15 @@ Insert into trainer_squad(squads_id, trainer_id)
 values (3, 3);
 
 --for swimmer
-Insert into swimmer(attendanceinhours, beststroke, dob, firstname, kilometerswam, lastname, squad_id)
+Insert into swimmer(attendanceinhours, beststroke, dob, firstname, swamkilometer, lastname, squad_id)
 values (0, 'Kraul', '05-08-2004', 'Oliver', 0, 'Sugic', 1);
-Insert into swimmer(attendanceinhours, beststroke, dob, firstname, kilometerswam, lastname, squad_id)
+Insert into swimmer(attendanceinhours, beststroke, dob, firstname, swamkilometer, lastname, squad_id)
 values (0, 'Kraul', '05-08-2004', 'Keine', 0, 'Ahunug', 1);
-Insert into swimmer(attendanceinhours, beststroke, dob, firstname, kilometerswam, lastname, squad_id)
+Insert into swimmer(attendanceinhours, beststroke, dob, firstname, swamkilometer, lastname, squad_id)
 values (0, 'Kraul', '05-08-2004', 'test', 0, 'test', 1);
 
-
+Insert into swimmer(attendanceinhours, beststroke, dob, firstname, swamkilometer, lastname, squad_id)
+values (0, 'Kraul', '05-08-2004', 'pensions', 0, 'reif', 1);
 
 
 
