@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+<!-- CSS Reset -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+<!-- Milligram CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Best Stroke</th>
+        <th>Swam Kilometers</th>
+        <th>Attended Hours</th>
+        <th>Kader</th>
+    </tr>
+    {#for swimmer in swimmers}
+        <tr>
+            <td>{swimmer.getFirstname()} {swimmer.getLastname()}</td>
+            <td>{swimmer.getBestStroke()}</td>
+            <td>{swimmer.getSwamKilometer()}</td>
+            <td>{swimmer.getAttendanceInHours()}</td>
+            <td>{swimmer.squad.getName()}</td>
+
+        </tr>
+        <p></p>
+    {/for}
+</table>
+</body>
+</html>
