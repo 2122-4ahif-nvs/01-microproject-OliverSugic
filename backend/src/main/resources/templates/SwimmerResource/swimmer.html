@@ -22,14 +22,12 @@
     </tr>
     {#for swimmer in swimmers}
         <tr>
-            <td>{swimmer.getFirstname()} {swimmer.getLastname()}</td>
-            <td>{swimmer.getBestStroke()}</td>
-            <td>{swimmer.getSwamKilometer()}</td>
-            <td>{swimmer.getAttendanceInHours()}</td>
-            <td>{swimmer.squad.getName()}</td>
-
+        <td>{swimmer.getFirstname()} {swimmer.getLastname()}</td>
+        <td>{swimmer.getBestStroke()}</td>
+        <td>{swimmer.getSwamKilometer()}</td>
+        <td>{swimmer.getAttendanceInHours()}</td>
+        <td>{swimmer.squad.getName()}</td>
         </tr>
-        <p></p>
     {/for}
 </table>
 </body>
